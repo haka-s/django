@@ -1,6 +1,14 @@
 {% load static %}
 {% block content %}
 
+<style>
+.hello-msg{
+  font-size: 18px;
+  color: #7abecc;
+  margin-right: 20px;
+}
+</style>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <img src="{%static 'images/logo.png' %}">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,5 +26,8 @@
         </li>
       </ul>
     </div>
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  <span class="hello-msg"><a href="{% url 'logout' %}">Logout</a> </span>
+
   </nav>
 {% endblock content %}
